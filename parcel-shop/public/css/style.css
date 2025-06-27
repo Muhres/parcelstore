@@ -1,0 +1,100 @@
+/* public/css/style.css */
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Header */
+header .nav-link {
+    transition: color 0.3s ease;
+}
+
+header .nav-link:hover {
+    color: #007bff !important; /* Warna biru Bootstrap */
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(45deg, #007bff, #6610f2); /* Gradient Bootstrap primary dan indigo */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #343a40;
+    transition: all 0.3s ease;
+}
+
+.hero .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+/* Product Cards */
+.product-card .card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: grab; /* Menandakan draggable */
+}
+
+.product-card .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+/* Drag and Drop Area */
+#parcel-drop-area {
+    background-color: #e9ecef; /* Abu-abu terang Bootstrap */
+    border-color: #adb5bd !important; /* Abu-abu sedang Bootstrap */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#parcel-drop-area.drag-over {
+    background-color: #d1e7dd; /* Hijau terang Bootstrap */
+    border-color: #28a745 !important; /* Hijau Bootstrap */
+}
+
+.parcel-item {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.parcel-item .remove-item {
+    cursor: pointer;
+    color: #dc3545; /* Merah Bootstrap */
+    font-size: 1.2em;
+}
+
+.parcel-item .remove-item:hover {
+    color: #c82333;
+}
+
+/* Sticky Customization Area */
+.sticky-top {
+    top: 20px; /* Jarak dari atas saat sticky */
+    z-index: 1020; /* Pastikan di atas konten lain jika perlu */
+}
+
+/* Footer */
+footer {
+    background-color: #212529 !important; /* Warna gelap Bootstrap */
+}
