@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bringjoy</title>
+
+    <link rel="icon" href="assets/icons/icons.ico" type="image/x-icon">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/all.min.css"> 
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-primary-dark" href="#">Bringjoy Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark-hover" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark-hover" href="#">Cara Membuat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark-hover" href="#">Hubungi Kami</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-link btn btn-primary text-white px-4 py-2 rounded-pill" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fas fa-shopping-basket me-2"></i> Keranjang (<span id="cart-item-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="hero text-center mb-5 p-5 rounded-4 shadow-lg">
+            <h2 class="display-4 fw-bold mb-3">Rangkai Parsel Anda Sekarang</h2>
+            <p class="lead mb-4">Pilih dari koleksi buah segar, makanan kemasan premium, dan minuman pilihan terbaik kami.</p>
+            <button class="btn btn-success btn-sm px-5 py-1 rounded-pill" id="start-customizing-btn">
+                Start</button>
+        </section>
+
+        <section class="customization-area row">
+            
+            <div class="col-md-7">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+                    <h3 class="mb-3 mb-md-0 text-primary-dark fw-bold"></h3>
+                    <div class="input-group search-bar">
+                        <input type="text" class="form-control rounded-start-pill py-2" placeholder="Cari produk..." id="search-product-input">
+                        <button class="btn btn-outline-secondary rounded-end-pill px-3" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                
+                <ul class="nav nav-tabs custom-tabs mb-4" id="productCategoryTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-products" type="button" role="tab" aria-controls="all-products" aria-selected="true">All</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="fruits-tab" data-bs-toggle="tab" data-bs-target="#fruits" type="button" role="tab" aria-controls="fruits" aria-selected="false">Fruits</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="snacks-tab" data-bs-toggle="tab" data-bs-target="#snacks" type="button" role="tab" aria-controls="snacks" aria-selected="false">Snacks</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="drinks-tab" data-bs-toggle="tab" data-bs-target="#drinks" type="button" role="tab" aria-controls="drinks" aria-selected="false">Drinks</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="productCategoryTabContent">
+                    <div class="tab-pane fade show active" id="all-products" role="tabpanel" aria-labelledby="all-tab">
+                        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="all-product-list">
+                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="fruits" role="tabpanel" aria-labelledby="fruits-tab">
+                        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="fruit-product-list">
+                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="snacks" role="tabpanel" aria-labelledby="snacks-tab">
+                        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="snack-product-list">
+                            </div>
+                    </div>
+                    <div class="tab-pane fade" id="drinks" role="tabpanel" aria-labelledby="drinks-tab">
+                        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3" id="drink-product-list">
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="summary-card p-3 shadow-sm mb-4">
+                    <h4 class="text-primary-dark fw-bold mb-3 text-center">Rincian Parsel Anda</h4>
+                    <div class="mb-3">
+                        <label for="parcel-size-select" class="form-label fw-bold">Pilih Ukuran Parsel:</label>
+                        <select class="form-select" id="parcel-size-select">
+                            <option value="small">Kecil (5-10 item)</option>
+                            <option value="medium">Sedang (10-15 item)</option>
+                            <option value="large">Besar (15+ item)</option>
+                        </select>
+                    </div>
+                    <div class="parcel-drop-area mb-3 p-3" id="parcel-drop-area">
+                        <i class="fas fa-box-open fa-3x mb-2"></i>
+                        <p>Seret & Jatuhkan Produk di Sini</p>
+                        <div id="parcel-items" class="w-100">
+                            </div>
+                        <p id="parcel-error-message" class="mt-2 fw-bold text-danger"></p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center fw-bold text-primary-dark">
+                        <span>Jumlah Item:</span>
+                        <span id="current-item-count">0</span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center fw-bold fs-5 text-primary-dark mt-2">
+                        <span>Total Harga:</span>
+                        <span id="total-price">Rp0</span>
+                    </div>
+                    <button class="btn btn-primary w-100 mt-3 rounded-pill" id="add-to-cart-btn">Tambahkan ke Keranjang</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 Bringjoy Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-header bg-primary text-white border-0 rounded-top-4">
+                    <h5 class="modal-title fw-bold" id="cartModalLabel">Keranjang Belanja Anda</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="cart-items-display">
+                        <p class="text-muted text-center py-4" id="empty-cart-message">Keranjang Anda kosong.</p>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top fw-bold fs-5 text-primary-dark">
+                        <span>Total Keseluruhan:</span>
+                        <span id="cart-total-price">Rp0</span>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0 pb-4 px-4">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Lanjutkan Belanja</button>
+                    <button type="button" class="btn btn-primary px-4 rounded-pill" id="checkout-btn">Lanjutkan ke Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script> 
+    <script src="js/script.js"></script>
+    <script src="js/drag-drop.js"></script> 
+</body>
+</html>
