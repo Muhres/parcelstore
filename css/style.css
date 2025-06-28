@@ -1,0 +1,404 @@
+/* Custom Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #EEEEEE; /* Light Grey/White */
+}
+
+.navbar {
+    background-color: #ffffff; /* Tetap putih atau bisa disesuaikan */
+    border-bottom: 1px solid #636E72; /* Medium Grey */
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 6rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero .display-4 {
+    font-weight: 700;
+}
+
+/* Primary buttons (e.g., Add to Cart, Checkout) */
+.btn-primary {
+    background-color: #00ADB5; /* Teal/Cyan */
+    border-color: #00ADB5; /* Teal/Cyan */
+}
+
+.btn-primary:hover {
+    background-color: #008C91; /* Sedikit lebih gelap dari Teal/Cyan */
+    border-color: #008C91; /* Sedikit lebih gelap dari Teal/Cyan */
+}
+
+/* Secondary buttons (e.g., Lanjutkan Belanja in cart modal) */
+.btn-secondary {
+    background-color: #636E72; /* Medium Grey */
+    border-color: #636E72; /* Medium Grey */
+    color: #ffffff; /* Teks putih untuk kontras */
+}
+
+.btn-secondary:hover {
+    background-color: #51595d; /* Sedikit lebih gelap dari Medium Grey */
+    border-color: #51595d; /* Sedikit lebih gelap dari Medium Grey */
+}
+
+
+.btn-success { /* Untuk tombol "Tambahkan ke Keranjang" jika digunakan */
+    background-color: #00ADB5; /* Teal/Cyan */
+    border-color: #00ADB5; /* Teal/Cyan */
+}
+
+.btn-success:hover {
+    background-color: #008C91; /* Sedikit lebih gelap dari Teal/Cyan */
+    border-color: #008C91; /* Sedikit lebih gelap dari Teal/Cyan */
+}
+
+.btn-warning { /* Untuk tombol "Mulai Kustomisasi Sekarang" */
+    background-color: #FFC107; /* Kuning Bootstrap default, bisa diganti jika ada warna kuning di palet baru */
+    border-color: #FFC107;
+    color: #2D3436; /* Dark Grey/Black untuk teks agar kontras */
+}
+
+.btn-warning:hover {
+    background-color: #E0A800; /* Sedikit lebih gelap */
+    border-color: #E0A800;
+}
+
+.btn-outline-primary {
+    color: #00ADB5; /* Teal/Cyan */
+    border-color: #00ADB5; /* Teal/Cyan */
+}
+
+.btn-outline-primary:hover {
+    background-color: #00ADB5; /* Teal/Cyan */
+    color: white;
+}
+
+.product-card .card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden; /* Ensure image corners are rounded */
+    cursor: grab; /* Indicating draggable */
+}
+
+.product-card .card:active {
+    cursor: grabbing;
+}
+
+.product-card .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card .card-img-top {
+    height: 110px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.product-card .card-body {
+    padding: .9rem;
+}
+
+.product-card .card-title {
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #2D3436; /* Dark Grey/Black */
+}
+
+.product-card .card-text {
+    font-size: 0.6rem;
+    color: #636E72; /* Medium Grey */
+}
+
+.customization-area {
+    background-color: #EEEEEE; /* Light Grey/White, bisa juga tetap #f0f2f5 jika ingin sedikit perbedaan */
+    padding: 0.3rem;
+    border-top: 1px solid #636E72; /* Medium Grey */
+}
+
+.parcel-drop-area {
+    background-color: #EEEEEE; /* Light Grey/White */
+    border: 2px dashed #636E72; /* Medium Grey */
+    border-radius: 10px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #636E72; /* Medium Grey */
+    font-size: 1rem;
+    transition: background-color 0.2s, border-color 0.2s;
+    padding: 1rem;
+}
+
+.parcel-drop-area.drag-over {
+    background-color: #CCE3E5; /* Warna yang lebih terang dari Teal/Cyan */
+    border-color: #00ADB5; /* Teal/Cyan */
+}
+
+.parcel-item {
+    background-color: #ffffff;
+    border: 1px solid #636E72; /* Medium Grey */
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #2D3436; /* Dark Grey/Black */
+}
+
+/* Styles for the quantity controls within parcel items */
+.parcel-item .quantity-minus-parcel,
+.parcel-item .quantity-plus-parcel {
+    width: 30px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 0.5rem;
+}
+
+.parcel-item .quantity-display-parcel {
+    min-width: 25px; /* Ensure enough space for numbers */
+    text-align: center;
+}
+
+/* Specific style for parcel error message */
+#parcel-error-message {
+    color: #dc3545; /* Tetap merah untuk pesan error agar menonjol */
+    font-weight: inherit;
+    text-transform: uppercase;
+}
+
+
+.summary-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+}
+
+.summary-card h3,
+.summary-card h4 {
+    color: #2D3436; /* Dark Grey/Black */
+    margin-bottom: 1rem;
+}
+
+.summary-card p {
+    margin-bottom: 0.5rem;
+}
+
+.summary-card .fw-bold {
+    color: #2D3436; /* Dark Grey/Black */
+}
+
+/* Cart Modal Specific Styling */
+.modal-header {
+    background-color: #CCE3E5; /* Light Teal/Cyan for modal header */
+    border-bottom: 1px solid #00ADB5; /* Teal/Cyan for border */
+}
+
+.modal-header .modal-title {
+    color: #2D3436; /* Dark Grey/Black */
+}
+
+.modal-header .btn-close {
+    color: #2D3436; /* Dark Grey/Black for the 'X' icon */
+    filter: none; /* Remove filter if any was applied previously, rely on color */
+    opacity: 0.7; /* Make it slightly less prominent */
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    color: #2D3436; /* Dark Grey/Black for general text in body */
+}
+
+.cart-modal-body .card {
+    border: 1px solid #636E72; /* Medium Grey */
+}
+
+.cart-modal-body .card-body {
+    padding: 1rem;
+}
+
+.cart-modal-body .card-title {
+    color: #2D3436; /* Dark Grey/Black */
+}
+
+.cart-modal-body .list-group-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    color: #2D3436; /* Dark Grey/Black */
+}
+
+.cart-modal-body .list-group-item span {
+    color: #2D3436; /* Ensure price also uses dark grey */
+}
+
+.cart-modal-body .fw-bold {
+    color: #2D3436; /* Dark Grey/Black */
+}
+
+.cart-modal-body .remove-parcel-btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    background-color: #dc3545; /* Tetap merah untuk "hapus" karena fungsinya merusak */
+    border-color: #dc3545;
+}
+
+.cart-modal-body .remove-parcel-btn:hover {
+    background-color: #b02a37;
+    border-color: #b02a37;
+}
+
+.modal-footer {
+    border-top: 1px solid #636E72; /* Medium Grey */
+    background-color: #EEEEEE; /* Light Grey/White */
+}
+
+
+footer {
+    background-color: #2D3436; /* Dark Grey/Black */
+    color: white;
+    padding: 2rem 0;
+}
+
+footer .list-unstyled li a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+
+footer .list-unstyled li a:hover {
+    color: white;
+}
+
+/* Tab styling */
+.nav-tabs .nav-link {
+    color: #636E72; /* Medium Grey */
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    color: #00ADB5; /* Teal/Cyan */
+    border-bottom-color: #00ADB5; /* Teal/Cyan */
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: transparent transparent #636E72; /* Medium Grey */
+}
+
+.tab-content .row {
+    margin-top: 1.5rem;
+}
+
+/* Sticky parcel summary */
+@media (min-width: 768px) {
+    .sticky-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 20px; /* Jarak dari atas */
+        z-index: 1020; /* Pastikan di atas konten lain jika perlu */
+    }
+}
+
+/* --- Responsivitas Umum --- */
+@media (max-width: 767.98px) { /* Untuk perangkat di bawah 768px (hp) */
+    .hero {
+        padding: 2rem !important; /* Kurangi padding hero di mobile */
+    }
+
+    .display-4 {
+        font-size: 2.5rem; /* Ukuran font lebih kecil untuk judul hero */
+    }
+
+    .lead {
+        font-size: 1rem; /* Ukuran font lebih kecil untuk deskripsi hero */
+    }
+
+    .customization-area {
+        flex-direction: column; /* Tumpuk kolom di mobile */
+    }
+
+    .col-md-7, .col-md-5 {
+        width: 100%; /* Ambil lebar penuh */
+    }
+
+    .col-md-5 { /* Kolom parsel */
+        order: -1; /* Pindahkan kolom parsel ke atas di mobile */
+        margin-bottom: 2rem; /* Beri jarak di bawah parsel */
+    }
+
+    .sticky-top {
+        position: static !important; /* Nonaktifkan sticky di mobile */
+        top: auto !important;
+    }
+
+    /* Sembunyikan fungsionalitas drag-and-drop di mobile */
+    #parcel-drop-area i,
+    #parcel-drop-area p {
+        display: none !important; /* Sembunyikan ikon dan teks placeholder */
+    }
+
+    /* Tampilkan kontrol kuantitas (+/-) di mobile */
+    .quantity-controls {
+        display: flex !important; /* Tampilkan kontrol kuantitas */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ensure quantity controls are visible for parcel items on mobile */
+    .parcel-item .d-flex {
+        display: flex !important; /* Override potential display: none from other rules */
+    }
+
+    .product-description {
+        display: none; /* Sembunyikan deskripsi produk di kartu untuk menghemat ruang */
+    }
+
+    /* Nonaktifkan draggable untuk kartu produk di mobile */
+    .product-card .card {
+        cursor: default !important; /* Ubah kursor */
+    }
+    .product-card.draggable .card {
+        /* Hapus efek draggable di mobile */
+        pointer-events: auto; /* Pastikan bisa diklik */
+    }
+
+    /* Sesuaikan ukuran tombol di header untuk mobile */
+    .nav-item .btn {
+        padding: 0.375rem 0.75rem; /* Padding lebih kecil */
+        font-size: 0.875rem; /* Ukuran font lebih kecil */
+    }
+    .nav-link {
+        padding: 0.5rem 0.5rem !important; /* Sesuaikan padding nav-link */
+    }
+
+    .input-group.w-50 {
+        width: 100% !important; /* Perluas search bar di mobile */
+    }
+}
+
+/* Sembunyikan kontrol kuantitas secara default (untuk desktop) */
+.quantity-controls {
+    display: none;
+}
